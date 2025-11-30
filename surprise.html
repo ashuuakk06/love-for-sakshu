@@ -24,6 +24,31 @@ Will you forgive me and stay with me, my love? 💋
 </p>
 
 <h2>💝 I Love You — Yours, Ashuuu 💝</h2>
+
+</script>
+<!-- Confetti button on surprise.html (keep inside the .container div) -->
+<button onclick="confettiBlast()" style="background:#ff2b77;color:#fff;padding:12px 26px;border-radius:25px;border:none;font-size:18px;cursor:pointer;">
+  Will You Be Mine Forever? 💍
+</button>
+
+<!-- canvas-confetti library -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+<script>
+function confettiBlast(){
+  // multiple bursts for a nice effect
+  for (let i = 0; i < 6; i++){
+    setTimeout(()=>{
+      confetti({
+        particleCount: 180,
+        spread: 120,
+        startVelocity: 40,
+        origin: { y: 0.6 }
+      });
+    }, i * 350);
+  }
+}
+</script>
 </div>
 
 </body>
