@@ -1,0 +1,61 @@
+body{
+    margin:0;
+    background:linear-gradient(120deg,#ffbfd8,#ff9fc8,#ff7eb5);
+    background-size:400% 400%;
+    animation:flow 10s infinite alternate;
+    font-family:Poppins, sans-serif;
+    text-align:center;
+    color:white;
+}
+
+@keyframes flow{
+    0%{background-position:left;}
+    100%{background-position:right;}
+}
+
+nav{
+    background:#ff5f9e;
+    padding:15px;
+    font-size:18px;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    border-radius:0 0 20px 20px;
+    font-weight:bold;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+nav a:hover{color:#ffebf7;text-shadow:0 0 10px #fff;}
+
+.container{
+    width:70%;
+    background:white;
+    color:#ff5f9e;
+    padding:40px;
+    margin:90px auto;
+    border-radius:25px;
+    box-shadow:0 0 40px rgba(255,0,120,.4);
+    font-size:22px;
+}
+
+h1{
+    font-size:45px;
+    color:#ff2b77;
+}
+
+button{
+    background:#ff2b77;
+    color:white;
+    padding:15px 28px;
+    border-radius:25px;
+    border:none;
+    font-size:20px;
+    cursor:pointer;
+    margin-top:20px;
+}
+button:hover{
+    transform:scale(1.1);
+}
