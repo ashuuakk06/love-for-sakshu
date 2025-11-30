@@ -11,19 +11,35 @@
 <a href="love_letter.html">Love Letter</a>
 <a href="why_i_love_you.html">Why I Love You</a>
 <a href="surprise.html">Surprise 🎁</a>
+<a href="next.html">Will You Be Mine Forever? 💍</a>
 </nav>
 
 <div class="container">
 <h1>My Dearest Love — Sakshu 💋</h1>
 
-<p>
-I'm sorry my sweet darling 💋  
-I know I hurt you, and my heart feels empty without you. <br>
-I don't want distances, I want us.  
-Please forgive me, I love you more than words.  
-</p>
+<p id="text"></p>
+
+<script>
+let msg = "I'm sorry my Sakshu ❤️ please forgive me, I love you the most...";
+let i=0;
+function type(){
+  if(i < msg.length){
+    document.getElementById("text").innerHTML += msg.charAt(i);
+    i++; setTimeout(type,60);
+  }
+}
+type();
+</script>
 
 <button onclick="location.href='love_letter.html'">Read Message 💞</button>
+</div>
+<audio autoplay loop>
+  <source src="ashuu.mp3" type="audio/mpeg">
+</audio>
+
+<div class="hearts">
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
 </div>
 
 </body>
