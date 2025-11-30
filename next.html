@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>My Forever — Proposal 💍</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* small overrides specific to final.html */
+    body{ display:flex; align-items:center; justify-content:center; min-height:100vh; margin:0; }
+    .final-card{
+      width:85%;
+      max-width:900px;
+      background: rgba(255,255,255,0.95);
+      border-radius:20px;
+      padding:40px;
+      text-align:center;
+      box-shadow: 0 10px 40px rgba(255,0,120,0.12);
+    }
+    h1{ color:#ff2b77; font-size:42px; margin:0 0 10px; }
+    p{ color:#6b2450; font-size:20px; line-height:1.5; margin:10px 0 25px; }
+    .yes-btn, .home-btn{
+      padding:14px 28px; border-radius:30px; border:none; cursor:pointer; font-size:18px; margin:8px;
+    }
+    .yes-btn{ background:linear-gradient(90deg,#ff6aa6,#ff3b86); color:white; box-shadow:0 6px 18px rgba(255,0,120,.2); }
+    .home-btn{ background:white; color:#ff2b77; border:2px solid #ffd1e3; }
+    /* floating hearts across screen */
+    .hearts{
+      position:fixed; inset:0; pointer-events:none; overflow:hidden; z-index:0;
+    }
+    .hearts i{ position:absolute; font-style:normal; font-size:30px; opacity:0.14; animation:floatUp linear infinite; }
+    @keyframes floatUp{
+      0%{ transform: translateY(110vh) translateX(0) rotate(0deg); opacity:0; }
+      10%{ opacity:0.6; }
+      100%{ transform: translateY(-30vh) translateX(40px) rotate(360deg); opacity:0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- hearts visual layer -->
+  <div class="hearts" aria-hidden="true">
+    <i style="left:5%; animation-duration:18s; font-size:36px;">💖</i>
+    <i style="left:20%; animation-duration:12s; font-size:44px;">💗</i>
+    <i style="left:35%; animation-duration:20s; font-size:28px;">💘</i>
+    <i style="left:50%; animation-duration:16s; font-size:50px;">💞</i>
+    <i style="left:70%; animation-duration:14s; font-size:30px;">💓</i>
+    <i style="left:85%; animation-duration:22s; font-size:42px;">💖</i>
+  </div>
+
+  <div class="final-card" role="main" style="z-index:1;">
+    <h1>My Forever, Sakshu 💍</h1>
+    <p>From the moment I met you, my life became brighter. I want to love you, care for you and grow with you — forever and always.  
+      Thank you for being you... my heart is yours.</p>
+
+    <button class="yes-btn" id="yesBtn">💖 YES, I will be yours 💖</button>
+    <button class="home-btn" onclick="location.href='index.html'">Back to Home</button>
+  </div>
+
+  <!-- canvas-confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+  <script>
+    // Play confetti automatically when final.html loads
+    window.addEventListener('load', ()=> {
+      // gentle repeated bursts
+      for (let i=0; i<6; i++){
+        setTimeout(()=> {
+          confetti({
+            particleCount: 200,
+            spread: 140,
+            startVelocity: 40,
+            origin: { y: 0.6 }
+          });
+        }, i * 400);
+      }
+      // optional automatic music (only if file exists)
+      try {
+        const music = new Audio('love.mp3'); // add love.mp3 to same folder
+        music.loop = true;
+        // some browsers block autoplay; try to play and ignore error
+        music.play().catch(()=>{ /* autoplay blocked */ });
+      } catch(e){}
+    });
+
+    // YES button also triggers big confetti + a popup
+    document.getElementById('yesBtn').addEventListener('click', ()=> {
+      for (let i=0;i<8;i++){
+        setTimeout(()=> {
+          confetti({
+            particleCount: 300,
+            spread: 200,
+            origin:{ y: 0.55 }
+          });
+        }, i*250);
+      }
+      // small sweet popup message
+      setTimeout(()=> {
+        alert("💞 She said YES! 💞\nYou made her smile—congratulations!");
+      }, 1400);
+    });
+  </script>
+
+</body>
+</html>
